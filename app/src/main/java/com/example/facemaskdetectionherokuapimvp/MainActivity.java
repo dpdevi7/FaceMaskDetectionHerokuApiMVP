@@ -229,6 +229,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
                     // 4. compress bitmap
                     mBitmap.compress(Bitmap.CompressFormat.JPEG, 30, new FileOutputStream(photoFile));
 
+
                 }else {
 
                     mBitmap = BitmapFactory.decodeFile(photoPath);

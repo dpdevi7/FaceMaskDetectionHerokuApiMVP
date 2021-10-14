@@ -112,10 +112,15 @@ public class DetectionPresenter implements Contract.Presenter {
 
                 Rect rect = new Rect();
                 JSONArray singeBox = boxes.optJSONArray(iBox); // e.g [xmin,ymin,xmax,ymax]
-                rect.left = singeBox.optInt(0);
-                rect.top = singeBox.optInt(1);
-                rect.right = singeBox.optInt(2);
-                rect.bottom = singeBox.optInt(3);
+
+                // choose 311, instead of 320, because bbox was sliding more towards +ve x dir,
+                int xScale = (int) Math.floor((bitmap.getWidth() / 311.0));
+                int yScale = (int) Math.floor((bitmap.getHeight() / 320.0));
+
+                rect.left = singeBox.optInt(0) * xScale;
+                rect.top = singeBox.optInt(1) * yScale;
+                rect.right = singeBox.optInt(2) * xScale;
+                rect.bottom = singeBox.optInt(3) * yScale;
 
                 int label = labels.optInt(iLabel); // e.g 1
                 double score = scores.optDouble(iScore); // e.g 0.99
