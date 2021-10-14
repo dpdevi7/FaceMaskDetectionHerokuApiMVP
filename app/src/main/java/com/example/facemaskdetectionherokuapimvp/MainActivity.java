@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
     private MaterialButton materialButtoneDetectMask;
     private TextView textView;
     private File photoFile;
-    private Bitmap mBitmap;
+    private Bitmap mBitmap = null;
     private String currentPhotoPath;
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -89,7 +89,13 @@ public class MainActivity extends AppCompatActivity implements Contract.View {
             @Override
             public void onClick(View view) {
 
-                presenter.callFaceDetectionService(apiInterface, photoFile, mBitmap);
+                if (mBitmap != null){
+                    presenter.callFaceDetectionService(apiInterface, photoFile, mBitmap);
+                }else {
+                    Toast.makeText(MainActivity.this, "No Image Found.", Toast.LENGTH_SHORT).show();
+                }
+
+
 
             }
         });
