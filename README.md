@@ -9,7 +9,6 @@
 
 * Simple app to detect mask given a captured picture.
 * Model-View-Presenter (**MVP**) Design pattern.
-* 
 
 
 
