@@ -7,5 +7,9 @@
   <img src="https://user-images.githubusercontent.com/27999714/137541576-bac4027f-8e9a-43b3-bb49-7a9911b618c1.jpg" alt="alt text" width="200" height="400">
 </p>
 
+* Simple app to detect mask given a captured picture.
+* Model-View-Presenter (**MVP**) Design pattern.
+* 
+
 
 
