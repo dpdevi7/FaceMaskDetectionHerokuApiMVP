@@ -9,6 +9,8 @@
 
 * Simple app to detect mask given a captured picture.
 * Model-View-Presenter (**MVP**) Design pattern.
+* Rest API - https://facemask-detection-api.herokuapp.com/predict
+* SSD Model
 
 
 
